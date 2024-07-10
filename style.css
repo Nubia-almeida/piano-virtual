@@ -1,0 +1,126 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #e3f2fd;
+}
+
+.container{
+    width: 60vw;
+    height: 70vh;
+    border-radius: 20px;
+    padding: 35px 40px;
+    background-color: black;
+}
+
+.container header{
+    display: flex;
+    color: #b2b2b2;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2{
+    font-size: 1.6rem;
+}
+
+header .column{
+    display: flex;
+    align-items: center;  
+}
+
+header .column span{
+    font-weight: 500;
+    font-size: 1.19rem;
+    margin-right: 15px;
+}
+
+header .volume-slider input{
+  padding: 5px;
+  accent-color: gray;
+}
+
+header .keys-check input{
+    width: 60px;
+    height: 30px;
+    appearance: none;
+    border-radius: 20px;
+    background-color: gray;
+    cursor: pointer;
+    position: relative;
+}
+
+.keys-check input::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #252424;
+    border-radius: inherit;
+    top: 50%;
+    left: 0.3rem;
+    transform: translateY(-50%);
+    position: absolute;
+    transition: all 0.2s ease;
+}
+
+.keys-check input:checked::before{
+    width: 20px;
+    height: 20px;
+    background-color: beige;
+    left: 2.3rem;  
+}
+
+.teclasPiano{
+    display: flex;
+    margin-top: 40px;  
+}
+
+.teclasPiano .tecla{
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    color: #a2a2a2;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.teclasPiano .white{
+    width: 70px;
+    height: 230px;
+    border: 1px solid green;
+    border-radius: 8px;
+    background: linear-gradient(#fff 96%,#eee 4%);
+}
+
+.teclasPiano .black{
+    width: 44px;
+    height: 140px;
+    z-index: 2;
+    margin: 0 -22px 0 -22px;
+    border: 1px solid green;
+    border-radius: 0 0 5px 5px;
+    background: linear-gradient(#333,#000);
+}
+
+.teclasPiano span{
+    position: absolute;
+    text-align: center;
+    bottom: 20px;
+    width: 100%;
+    font-size: 1.13rem;
+}
+
+.teclasPiano .white.active{
+    box-shadow: inset -5px 5px 20px rgba(0,0,0,0.3);
+    background: linear-gradient(to bottom #fff 0%, #eee 100%);
+}
+
+.teclasPiano .black.active{
+    box-shadow: inset -5px 5px 10px rgba(255, 255, 255,0.1);
+    background: linear-gradient(to bottom #000, #434343);
+}
+
+.teclasPiano .tecla.hide span{
+    display: none;
+}
